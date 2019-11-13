@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel = "stylesheet" href = "index.css" type = "text/css">
+    <title>Sally Resume</title>
+</head>
+<body>
+    <div id = "application-root"></div>
+<script src = "https://unpkg.com/react@16/umd/react.development.js"></script>
+<script src = "https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src = "https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script type = "text/babel">
+
+function App(props) {
+            console.log(props.name)
+            return (
+                <div>
+                    <h1>{props.name}'s Resume</h1>
+                    {props.children}
+                </div>
+            );
+}
+
+ReactDOM.render(
+    <App name="Sally">
+        <header>
+            <address>
+                1650 1st Avenue Bronx, NY 11001 * 612-912-2343 * <a href = "mailto:sallystudent@gmail.com" target = "_blank">sallystudent@gmail.com</a>
+            </address> 
+            
+            <img className = "image" src= "https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg" alt= "A picture of Sally" width = "150" height = "210" />
+        </header>
+        <main>
+            <section>
+                <h2>Work Experience</h2>
+                <h3><i>Fullstack Developer at Digital Web Co.</i></h3>
+                <h4>Jan. 2006 - Dec. 2008</h4>
+                <ul>
+                    <li>Designed full stack web applications</li>
+                    <li>Created new features for customers and internal use</li>
+                    <li>Maintained and optimized existing systems</li>
+                </ul>
+                <h3><i>Front-End Developer at Groundbreaking Web Techno, Inc.</i></h3>
+                <h4>Mar. 2004 - Dec. 2006</h4>
+                <ul>
+                    <li>Created user friendly web pages</li>
+                    <li>Collaborated with back-end developers and web designers to improve web applications</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <h3>Hunter College</h3>
+                <p> Bachelor of Arts in Psychology</p>
+            </section>
+        </main>
+        </App>,
+        document.querySelector('#application-root')
+);
+        
+</script>    
+</body>
